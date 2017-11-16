@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api do
+    get "/artists", to: "artists#index", as: "artists"
+    get "/artists/v", to: "artists#visual", as: "artists_v"
+    get "/artists/a", to: "artists#audio", as: "artists_a"
+  end
 end
